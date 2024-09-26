@@ -105,29 +105,62 @@
         }
         
         .experience-card, .project-card {
-            background-color: var(--card-bg);
-            border-radius: 4px;
-            padding: 25px;
-            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: 4px;
+            margin-bottom: 20px;
         }
         
         .experience-card:hover, .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-            border-color: var(--accent-color);
-            filter: brightness(1.1);
+            transform: translateX(10px);
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 10px rgba(2, 12, 27, 0.1);
         }
         
         .section:hover .experience-card:not(:hover),
         .section:hover .project-card:not(:hover) {
-            filter: blur(2px);
+            filter: blur(1px);
+            opacity: 0.7;
+        }
+        
+        .timeline, .project-thumbnail {
+            width: 100px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .timeline {
+            text-align: right;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+        
+        .project-thumbnail {
+            height: 100px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .project-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .experience-content, .project-content {
+            flex-grow: 1;
         }
         
         .experience-card h3, .project-card h3 {
             color: var(--heading-color);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .experience-card .company {
+            color: var(--accent-color);
+            font-weight: 600;
         }
         
         .experience-card a, .project-card a {
@@ -142,15 +175,11 @@
             color: var(--accent-color);
         }
         
-        .experience-card a i, .project-card a i {
-            margin-right: 10px;
-        }
-        
         .experience-card a::after, .project-card a::after {
             content: '\f0a9';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
-            margin-left: 10px;
+            margin-left: 5px;
             transition: transform 0.3s ease;
         }
         
@@ -194,43 +223,6 @@
         .arrow-icon:hover::after {
             transform: translateX(5px);
         }
-
-        .project-card {
-        display: flex;
-        align-items: flex-start;
-        }
-
-        .project-thumbnail {
-            width: 100px;
-            height: 100px;
-            margin-right: 20px;
-            flex-shrink: 0;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .project-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-content {
-            flex-grow: 1;
-        }
-
-        @media (max-width: 768px) {
-            .project-card {
-                flex-direction: column;
-            }
-
-            .project-thumbnail {
-                width: 100%;
-                height: 150px;
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-        }
         
         @media (max-width: 1024px) {
             .container {
@@ -244,6 +236,21 @@
                 position: static;
                 height: auto;
                 margin-bottom: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .experience-card, .project-card {
+                flex-direction: column;
+            }
+            .timeline, .project-thumbnail {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+                text-align: left;
+            }
+            .project-thumbnail {
+                height: 150px;
             }
         }
     </style>
@@ -274,25 +281,31 @@
             <section id="experience" class="section">
                 <h2><i class="fas fa-briefcase"></i> Experience</h2>
                 <div class="experience-card">
-                    <h3><a href="#"><i class="fas fa-laptop-code"></i> Undergraduate Research Assistant - UQ Cyber</a></h3>
-                    <p class="date">July 2023 - June 2024</p>
-                    <p>Conducted research on Security in Autonomous Vehicles Networks, focusing on Denial of Service attack mitigation. Developed and implemented cyber threat modeling techniques for multi-robot teams using Python and C#/.NET.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">C#/.NET</span>
-                        <span class="tech-tag">ROS2</span>
-                        <span class="tech-tag">Ubuntu</span>
+                    <div class="timeline">2024 — PRESENT</div>
+                    <div class="experience-content">
+                        <h3><a href="#">Senior Frontend Engineer, Accessibility</a></h3>
+                        <div class="company">Klaviyo</div>
+                        <p>Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams to implement and advocate for best practices in web accessibility.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Storybook</span>
+                        </div>
                     </div>
                 </div>
                 <div class="experience-card">
-                    <h3><a href="#"><i class="fas fa-stream"></i> Software Developer Intern - IO Stream</a></h3>
-                    <p class="date">June 2023 - August 2023</p>
-                    <p>Developed and maintained web applications using React and Node.js. Collaborated with cross-functional teams to implement new features and improve existing functionality.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Git</span>
+                    <div class="timeline">2018 — 2024</div>
+                    <div class="experience-content">
+                        <h3><a href="#">Lead Engineer</a></h3>
+                        <div class="company">Upstatement</div>
+                        <p>Build, style, and ship high-quality websites, design systems, mobile apps, and digital experiences for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, and more.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
                     </div>
                 </div>
                 <a href="#" class="view-more arrow-icon">View Full Résumé</a>
@@ -302,10 +315,10 @@
                 <h2><i class="fas fa-project-diagram"></i> Projects</h2>
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="path_to_spamoverflow_image.jpg" alt="SpamOverflow">
+                        <img src="project.jpg" alt="SpamOverflow">
                     </div>
                     <div class="project-content">
-                        <h3><a href="#"><i class="fas fa-shield-alt"></i> SpamOverflow</a></h3>
+                        <h3><a href="#">SpamOverflow</a></h3>
                         <p>Developed a machine learning-based spam detection system using Python and scikit-learn. Implemented advanced NLP techniques for efficient email classification.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Python</span>
@@ -315,109 +328,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- Add more project cards here -->
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="project.jpg" alt="tinyDSA">
+                        <img src="project.jpg" alt="SpamOverflow">
                     </div>
                     <div class="project-content">
-                        <h3><a href="#"><i class="fas fa-microchip"></i> tinyDSA</a></h3>
-                        <p>Implemented a lightweight library of common data structures and algorithms in C++. Optimized for performance and memory efficiency, suitable for embedded systems.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Data Structures</span>
-                            <span class="tech-tag">Algorithms</span>
-                            <span class="tech-tag">Optimization</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="path_to_sonarqueue_image.jpg" alt="Sonar Queue Clone">
-                    </div>
-                    <div class="project-content">
-                        <h3><a href="#"><i class="fas fa-tasks"></i> Sonar Queue Clone</a></h3>
-                        <p>Created a clone of the Sonar Queue system, implementing key features and functionalities. Focused on efficient task management and scheduling.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">RESTful API</span>
-                            <span class="tech-tag">Multithreading</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="path_to_kalmanfilter_image.jpg" alt="Extended Kalman Filter">
-                    </div>
-                    <div class="project-content">
-                        <h3><a href="#"><i class="fas fa-robot"></i> Extended Kalman Filter-based Consensus Controller</a></h3>
-                        <p>Developed a consensus controller for multi-robot systems using Extended Kalman Filter techniques. Improved coordination and decision-making in autonomous vehicle networks.</p>
+                        <h3><a href="#">SpamOverflow</a></h3>
+                        <p>Developed a machine learning-based spam detection system using Python and scikit-learn. Implemented advanced NLP techniques for efficient email classification.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">ROS</span>
-                            <span class="tech-tag">Control Systems</span>
-                            <span class="tech-tag">Kalman Filter</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="path_to_scanorderqr_image.jpg" alt="ScanOrderQR">
-                    </div>
-                    <div class="project-content">
-                        <h3><a href="#"><i class="fas fa-qrcode"></i> ScanOrderQR</a></h3>
-                        <p>Built a full-stack web application for QR code-based ordering systems. Implemented features from frontend to backend and handled DevOps aspects for smooth deployment.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">CI/CD</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="path_to_cloudids_image.jpg" alt="Cloud-based IDS">
-                    </div>
-                    <div class="project-content">
-                        <h3><a href="#"><i class="fas fa-cloud-upload-alt"></i> Cloud-based Intrusion Detection System (IDS)</a></h3>
-                        <p>Developed a cloud-based IDS application, leveraging cloud computing technologies for efficient threat detection. Implemented machine learning algorithms for anomaly detection.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">AWS</span>
                             <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Cybersecurity</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="path_to_wordiply_image.jpg" alt="CLI Wordiply Game">
-                    </div>
-                    <div class="project-content">
-                        <h3><a href="#"><i class="fas fa-terminal"></i> CLI Wordiply Game</a></h3>
-                        <p>Created a command-line interface word game with a comprehensive test suite. Implemented multi-threading and inter-process communication for efficient gameplay and testing.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">C</span>
-                            <span class="tech-tag">Multi-threading</span>
-                            <span class="tech-tag">IPC</span>
-                            <span class="tech-tag">Unit Testing</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="path_to_ipsec_image.jpg" alt="IPSEC Simulation">
-                    </div>
-                    <div class="project-content">
-                        <h3><a href="#"><i class="fas fa-lock"></i> IPSEC Simulation Project</a></h3>
-                        <p>Implemented encryption with OpenSSL, Public Key Cryptosystems, and Public Key Infrastructure for an IPSEC simulation. Focused on secure communication protocols and cryptographic techniques.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">OpenSSL</span>
-                            <span class="tech-tag">Cryptography</span>
-                            <span class="tech-tag">Network Security</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">scikit-learn</span>
                         </div>
                     </div>
                 </div>
