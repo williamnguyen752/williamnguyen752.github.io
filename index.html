@@ -397,7 +397,7 @@
             background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
             pointer-events: none;
             z-index: 9999;
-            transition: width 0.3s, height 0.3s, opacity 0.3s;
+            transition: width 0.3s, height 0.3s, opacity 0.99999s;
             filter: blur(20px);
             mix-blend-mode: screen;
         }
@@ -407,7 +407,7 @@
     <div class="container">
         <div class="left-column">
             <h1>Viet Nguyen</h1>
-            <h2>Graduate Software Engineer</h2>
+            <h2><span class="highlight">Graduate Software Engineer</span></h2>
             <p>I build <span class="highlight">secure</span>, <span class="highlight">efficient</span>, and <span class="highlight">innovative</span> software solutions.</p>
             <nav>
                 <ul>
@@ -417,57 +417,66 @@
                 </ul>
             </nav>
             <div class="social-links">
-                <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/vietngyn" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/vietnguyen00" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
         <div class="right-column">
             <section id="about" class="section">
                 <h2></h2>
-                <p>Software engineering graduate with a strong foundation in cybersecurity. Experienced in developing secure and efficient software solutions, with a focus on data structures, algorithms, and cloud computing. Passionate about creating innovative solutions to complex problems.</p>
+                <p>Software engineering graduate with a strong foundation in <span class="highlight">cybersecurity</span>. Experienced in developing <span class="highlight">secure</span> and <span class="highlight">efficient</span> software solutions, with a focus on <span class="highlight">data structures</span>, <span class="highlight">algorithms</span>, and <span class="highlight">cloud computing</span>. Passionate about creating <span class="highlight">innovative solutions</span> to complex problems.</p>
             </section>
             <section id="experience" class="section">
                 <h2></h2>
                 <div class="experience-card">
-                    <div class="timeline">2024 - PRESENT</div>
+                    <div class="timeline">2023 - 2024</div>
                     <div class="experience-content">
-                        <h3><a href="#">Senior Frontend Engineer, Accessibility<span class="arrow-icon">→</span></a></h3>
-                        <div class="company">Klaviyo</div>
-                        <p>Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams to implement and advocate for best practices in web accessibility.</p>
+                        <h3><a href="#">Undergraduate Research Assistant<span class="arrow-icon">→</span></a></h3>
+                        <div class="company">UQ Cyber</div>
+                        <p>Conducted research on <span class="highlight">Security in Autonomous Vehicles Networks</span>, focusing on <span class="highlight">Denial of Service attack mitigation</span>. Developed and implemented <span class="highlight">cyber threat modeling techniques</span> for multi-robot teams using Python and C#/.NET.</p>
                         <div class="tech-tags">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Storybook</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">C#/.NET</span>
+                            <span class="tech-tag">ROS2</span>
+                            <span class="tech-tag">Ubuntu</span>
+                            <span class="tech-tag">Gazebo</span>
                         </div>
                     </div>
                 </div>
                 <div class="experience-card">
-                    <div class="timeline">2018 - 2024</div>
+                    <div class="timeline">2023</div>
                     <div class="experience-content">
-                        <h3><a href="#">Lead Engineer<span class="arrow-icon">→</span></a></h3>
-                        <div class="company">Upstatement</div>
-                        <p>Build, style, and ship high-quality websites, design systems, mobile apps, and digital experiences for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, and more.</p>
+                        <h3><a href="#">Software Developer Intern<span class="arrow-icon">→</span></a></h3>
+                        <div class="company">IO Stream</div>
+                        <p>Assisted in <span class="highlight">API development</span> using NodeJS and TypeScript. Applied <span class="highlight">OWASP</span> principles for web application security. Contributed to <span class="highlight">solution designs</span> for IO Stream key products.</p>
                         <div class="tech-tags">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Agile</span>
+                            <span class="tech-tag">OWASP</span>
                         </div>
                     </div>
                 </div>
-                <a href="#" class="view-more">View Full Résumé<span class="arrow-icon">→</span></a>
+                <a href="resume.pdf" class="view-more" target="_blank">View Full Résumé<span class="arrow-icon">→</span></a>
             </section>
+
             <section id="projects" class="section">
                 <h2></h2>
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="project.jpg" alt="SpamOverflow">
+                        <img src="spamoverflow.png" alt="SpamOverflow">
                     </div>
                     <div class="project-content">
                         <h3><a href="#">SpamOverflow<span class="arrow-icon">→</span></a></h3>
-                        <p>Developed a machine learning-based spam detection system using Python and scikit-learn. Implemented advanced NLP techniques for efficient email classification.</p>
+                        <p>Demonstrate my ability to <span class="highlight">design, implement, and deploy a web API</span> that can
+                            process a high load, i.e. a <span class="highlight">scalable application</span>. You are to deloy an API for scanning and filtering spam/malicious emails. Specially your application needs to support:
+                            Scanning an email via an API request.
+                            Providing access to a specified <span class="highlight">REST API</span>, e.g. for use by front-end interfaces and internal teams.
+                            Remaining responsive while scanning emails.
+                            Your service will be deployed to AWS and will undergo automated correctness and <span class="highlight">load-testing</span> to ensure
+                            it meets the requirements.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Machine Learning</span>
@@ -476,7 +485,37 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="view-more">View Full Project Archive<span class="arrow-icon">→</span></a>
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="project.jpg" alt="tinyDSA">
+                    </div>
+                    <div class="project-content">
+                        <h3><a href="#">tinyDSA<span class="arrow-icon">→</span></a></h3>
+                        <p>Implemented a <span class="highlight">lightweight library</span> of common data structures and algorithms in C++. Optimized for <span class="highlight">performance and memory efficiency</span>, suitable for embedded systems.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Data Structures</span>
+                            <span class="tech-tag">Algorithms</span>
+                            <span class="tech-tag">Optimization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="thesis.png" alt="Extended Kalman Filter">
+                    </div>
+                    <div class="project-content">
+                        <h3><a href="#">Extended Kalman Filter-based Consensus Controller<span class="arrow-icon">→</span></a></h3>
+                        <p>Developed a <span class="highlight">consensus controller</span> for multi-robot systems using Extended Kalman Filter techniques. Improved <span class="highlight">coordination and decision-making</span> in autonomous vehicle networks.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">ROS</span>
+                            <span class="tech-tag">Control Systems</span>
+                            <span class="tech-tag">Kalman Filter</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://github.com/vietngyn?tab=repositories" class="view-more" target="_blank">View Full Project Archive<span class="arrow-icon">→</span></a>
             </section>
         </div>
     </div>
@@ -525,6 +564,7 @@
                 cursorLight.style.left = `${e.clientX - 200}px`;  // 200 is half the width of the light effect
                 cursorLight.style.top = `${e.clientY - 200}px`;   // 200 is half the height of the light effect
             });
+
         });
     </script>
 </body>
