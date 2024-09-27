@@ -191,11 +191,30 @@
             margin-bottom: 2rem;
             transition: all 0.3s ease;
             border-bottom: 1px solid var(--card-bg-color);
+            position: relative;
+            overflow: hidden;
         }
 
         .experience-card {
             /* ... (other styles remain unchanged) ... */
             max-width: 600px; /* Limit width to control line length */
+        }
+
+        .experience-card::before, .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .experience-card:hover::before, .project-card:hover::before {
+            opacity: 1;
         }
 
         .experience-content p {
@@ -370,6 +389,18 @@
                 margin-right: 0;
             }
         }
+        #cursor-light {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.3s, height 0.3s, opacity 0.3s;
+            filter: blur(20px);
+            mix-blend-mode: screen;
+        }
     </style>
 </head>
 <body>
@@ -449,6 +480,7 @@
             </section>
         </div>
     </div>
+    <div id="cursor-light"></div>
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -481,6 +513,17 @@
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', function() {
                 this.blur(); // Remove focus from the link after click
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursorLight = document.getElementById('cursor-light');
+        
+            document.addEventListener('mousemove', (e) => {
+                // Directly set the position of the light to the mouse position
+                cursorLight.style.left = `${e.clientX - 200}px`;  // 200 is half the width of the light effect
+                cursorLight.style.top = `${e.clientY - 200}px`;   // 200 is half the height of the light effect
             });
         });
     </script>
