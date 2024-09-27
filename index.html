@@ -3,254 +3,371 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viet Nguyen - Software Engineer & Cybersecurity Specialist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Viet's Portfolio</title>
     <style>
-        :root {
-            --bg-color: #0a192f;
-            --text-color: #8892b0;
-            --heading-color: #ccd6f6;
-            --accent-color: #64ffda;
-            --hover-color: #5eead4;
-            --card-bg: #112240;
+            :root {
+        --bg-color: #0a192f;
+        --text-color: #8892b0;
+        --highlight-color: #64ffda;
+        --heading-color: #ccd6f6;
+        --card-bg-color: rgba(17, 34, 64, 0.5);
+        --card-hover-bg-color: #112240;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
-        body, html {
-            font-family: 'Inter', sans-serif;
+
+        body {
+            font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
         }
-        
+
         .container {
             display: flex;
-            max-width: 1200px;
+            max-width: 1600px; /* Increased to accommodate wider columns */
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 2rem;
         }
-        
+
         .left-column {
-            width: 300px;
-            position: sticky;
-            top: 100px;
-            height: calc(100vh - 200px);
+            position: fixed;
+            width: 40%;
+            max-width: 600px;
+            padding: 2rem;  /* Add padding to the top */
+            height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;  /* Align content to the top */
+            align-items: flex-start;
         }
-        
+
+        .left-column p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .left-column > * {
+            max-width: 400px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
         .right-column {
-            flex-grow: 1;
-            margin-left: 50px;
+            margin-left: 50%; /* Start from the center */
+            width: 50%; /* Equal width to left column */
+            max-width: 800px;
         }
-        
-        h1 {
-            font-size: 3rem;
+
+        h1, h2, h3 {
             color: var(--heading-color);
-            margin-bottom: 0.5rem;
         }
-        
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
         h2 {
-            font-size: 2rem;
-            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: var(--text-color);
+        }
+
+        .highlight {
+            color: var(--highlight-color);
+            font-weight: 500; /* Slightly bolder */
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Optional: Add an underline effect */
+        .highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--highlight-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .highlight:hover::after {
+            transform: scaleX(1);
+        }
+
+        nav {
+            margin-top: 2rem;  /* Add some space above the navigation */
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
             margin-bottom: 1rem;
         }
-        
-        .highlight {
-            color: var(--accent-color);
-        }
-        
-        .nav-links {
-            list-style-type: none;
-            margin-top: 50px;
-        }
-        
-        .nav-links li {
-            margin-bottom: 20px;
-        }
-        
-        .nav-links a {
+
+        nav ul li a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 0.9rem;
             transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            user-select: none; /* Prevent text selection */
+            -webkit-user-select: none; /* For Safari */
+            -moz-user-select: none; /* For Firefox */
+            -ms-user-select: none; /* For IE10+/Edge */
         }
-        
-        .nav-links a:hover {
-            color: var(--accent-color);
+
+        nav ul li a:focus {
+            outline: none; /* Remove focus outline */
         }
-        
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--highlight-color);
+        }
+
+        nav ul li a.active::before {
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background-color: var(--highlight-color);
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
         .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 50px;
+            margin-top: 2rem;
         }
-        
+
         .social-links a {
             color: var(--text-color);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            margin-right: 1rem;
             transition: color 0.3s ease;
         }
-        
+
         .social-links a:hover {
-            color: var(--accent-color);
+            color: var(--highlight-color);
         }
-        
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--highlight-color);
+        }
+
         .section {
-            margin-bottom: 70px;
+            margin-bottom: 4rem;
         }
-        
+
         .experience-card, .project-card {
             display: flex;
-            align-items: flex-start;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
             transition: all 0.3s ease;
-            border-radius: 4px;
-            margin-bottom: 20px;
+            border-bottom: 1px solid var(--card-bg-color);
         }
-        
+
+        .experience-card {
+            /* ... (other styles remain unchanged) ... */
+            max-width: 600px; /* Limit width to control line length */
+        }
+
+        .experience-content p {
+            max-width: 80ch; /* Limit to approximately 80 characters per line */
+        }
+
+        .project-card {
+            /* ... (other styles remain unchanged) ... */
+            max-width: 600px; /* Limit width to control line length */
+        }
+
         .experience-card:hover, .project-card:hover {
-            transform: translateX(10px);
-            background-color: var(--card-bg);
-            box-shadow: 0 4px 10px rgba(2, 12, 27, 0.1);
+            transform: translateY(-5px);
+            background-color: var(--card-hover-bg-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        
-        .section:hover .experience-card:not(:hover),
-        .section:hover .project-card:not(:hover) {
+
+        .experience-card:hover ~ .experience-card,
+        .project-card:hover ~ .project-card {
             filter: blur(1px);
             opacity: 0.7;
         }
-        
-        .timeline, .project-thumbnail {
-            width: 100px;
-            margin-right: 20px;
-            flex-shrink: 0;
+
+        .project-content p {
+            max-width: 80ch; /* Limit to approximately 80 characters per line */
         }
-        
+
         .timeline {
-            text-align: right;
-            color: var(--accent-color);
             font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            min-width: 120px;
         }
-        
+
+        .experience-content, .project-content {
+            flex: 1;
+        }
+
+        .company {
+            color: var(--highlight-color);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
         .project-thumbnail {
-            height: 100px;
-            border-radius: 4px;
+            width: 120px;
+            height: 80px;
+            margin-right: 1.5rem;
             overflow: hidden;
+            border-radius: 4px;
         }
-        
+
         .project-thumbnail img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
-        .experience-content, .project-content {
-            flex-grow: 1;
-        }
-        
-        .experience-card h3, .project-card h3 {
-            color: var(--heading-color);
-            margin-bottom: 5px;
-        }
-        
-        .experience-card .company {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-        
-        .experience-card a, .project-card a {
-            color: var(--heading-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .experience-card a:hover, .project-card a:hover {
-            color: var(--accent-color);
-        }
-        
-        .experience-card a::after, .project-card a::after {
-            content: '\f0a9';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            margin-left: 5px;
-            transition: transform 0.3s ease;
-        }
-        
-        .experience-card a:hover::after, .project-card a:hover::after {
-            transform: translateX(5px);
-        }
-        
+
         .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
+            margin-top: 1rem;
         }
-        
+
         .tech-tag {
+            display: inline-block;
             background-color: rgba(100, 255, 218, 0.1);
-            color: var(--accent-color);
-            padding: 5px 10px;
-            border-radius: 4px;
+            color: var(--highlight-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
             font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
         }
-        
+
         .view-more {
             display: inline-block;
-            margin-top: 20px;
-            color: var(--accent-color);
+            color: var(--highlight-color);
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .view-more:hover {
+            color: var(--text-color);
+        }
+
+        .arrow-icon {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .view-more:hover .arrow-icon,
+        h3 a:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+
+        h3 a {
+            color: var(--heading-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
-        .view-more:hover {
-            color: var(--hover-color);
+
+        h3 a:hover {
+            color: var(--highlight-color);
         }
-        
-        .arrow-icon::after {
-            content: ' →';
-            transition: transform 0.3s ease;
-            display: inline-block;
-        }
-        
-        .arrow-icon:hover::after {
-            transform: translateX(5px);
-        }
-        
-        @media (max-width: 1024px) {
+
+        @media screen and (max-width: 1200px) {
             .container {
                 flex-direction: column;
             }
-            .left-column, .right-column {
-                width: 100%;
-                margin-left: 0;
-            }
+
             .left-column {
                 position: static;
+                width: 100%;
+                max-width: none;
+                padding: 2rem;
                 height: auto;
-                margin-bottom: 50px;
+                overflow-y: visible;
+            }
+            .left-column > * {
+                max-width: none; /* Allow full width on smaller screens */
+            }
+
+            .right-column {
+                margin-left: 0;
+                width: 100%;
+                max-width: none;
             }
         }
-        
-        @media (max-width: 768px) {
-            .experience-card, .project-card {
+
+        @media screen and (max-width: 1024px) {
+            .container {
                 flex-direction: column;
             }
-            .timeline, .project-thumbnail {
+
+            .left-column {
+                position: static;
                 width: 100%;
-                margin-right: 0;
-                margin-bottom: 15px;
-                text-align: left;
+                padding-right: 0;
+                margin-bottom: 2rem;
             }
+
+            .right-column {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .experience-card, .project-card {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .timeline, .project-thumbnail {
+                margin-bottom: 1rem;
+            }
+
             .project-thumbnail {
-                height: 150px;
+                width: 100%;
+                height: auto;
+                margin-right: 0;
             }
         }
     </style>
@@ -259,31 +376,32 @@
     <div class="container">
         <div class="left-column">
             <h1>Viet Nguyen</h1>
-            <h2>Software Engineer & Cybersecurity Specialist</h2>
+            <h2>Graduate Software Engineer</h2>
             <p>I build <span class="highlight">secure</span>, <span class="highlight">efficient</span>, and <span class="highlight">innovative</span> software solutions.</p>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
             <div class="social-links">
-                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
         <div class="right-column">
             <section id="about" class="section">
-                <h2><i class="fas fa-user"></i> About Me</h2>
+                <h2></h2>
                 <p>Software engineering graduate with a strong foundation in cybersecurity. Experienced in developing secure and efficient software solutions, with a focus on data structures, algorithms, and cloud computing. Passionate about creating innovative solutions to complex problems.</p>
             </section>
-            
             <section id="experience" class="section">
-                <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                <h2></h2>
                 <div class="experience-card">
-                    <div class="timeline">2024 — PRESENT</div>
+                    <div class="timeline">2024 - PRESENT</div>
                     <div class="experience-content">
-                        <h3><a href="#">Senior Frontend Engineer, Accessibility</a></h3>
+                        <h3><a href="#">Senior Frontend Engineer, Accessibility<span class="arrow-icon">→</span></a></h3>
                         <div class="company">Klaviyo</div>
                         <p>Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams to implement and advocate for best practices in web accessibility.</p>
                         <div class="tech-tags">
@@ -295,9 +413,9 @@
                     </div>
                 </div>
                 <div class="experience-card">
-                    <div class="timeline">2018 — 2024</div>
+                    <div class="timeline">2018 - 2024</div>
                     <div class="experience-content">
-                        <h3><a href="#">Lead Engineer</a></h3>
+                        <h3><a href="#">Lead Engineer<span class="arrow-icon">→</span></a></h3>
                         <div class="company">Upstatement</div>
                         <p>Build, style, and ship high-quality websites, design systems, mobile apps, and digital experiences for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, and more.</p>
                         <div class="tech-tags">
@@ -308,17 +426,16 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="view-more arrow-icon">View Full Résumé</a>
+                <a href="#" class="view-more">View Full Résumé<span class="arrow-icon">→</span></a>
             </section>
-            
             <section id="projects" class="section">
-                <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                <h2></h2>
                 <div class="project-card">
                     <div class="project-thumbnail">
                         <img src="project.jpg" alt="SpamOverflow">
                     </div>
                     <div class="project-content">
-                        <h3><a href="#">SpamOverflow</a></h3>
+                        <h3><a href="#">SpamOverflow<span class="arrow-icon">→</span></a></h3>
                         <p>Developed a machine learning-based spam detection system using Python and scikit-learn. Implemented advanced NLP techniques for efficient email classification.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Python</span>
@@ -328,25 +445,44 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more project cards here -->
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="project.jpg" alt="SpamOverflow">
-                    </div>
-                    <div class="project-content">
-                        <h3><a href="#">SpamOverflow</a></h3>
-                        <p>Developed a machine learning-based spam detection system using Python and scikit-learn. Implemented advanced NLP techniques for efficient email classification.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">scikit-learn</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="view-more arrow-icon">View Full Project Archive</a>
+                <a href="#" class="view-more">View Full Project Archive<span class="arrow-icon">→</span></a>
             </section>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav ul li a');
+        
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Remove active class from all links
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                });
+            });
+        
+            // Set initial active state based on current URL hash
+            const currentHash = window.location.hash;
+            if (currentHash) {
+                const activeLink = document.querySelector(`nav ul li a[href="${currentHash}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            } else {
+                // If no hash, set first link as active
+                navLinks[0].classList.add('active');
+            }
+        });
+    </script>
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                this.blur(); // Remove focus from the link after click
+            });
+        });
+    </script>
 </body>
 </html>
