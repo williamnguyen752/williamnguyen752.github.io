@@ -30,7 +30,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "vietnguyen-williamnguy-76"
-          entrypoint: "src/main.ts"
+          entrypoint: "out/www/index.html"
           root: ""
-          include: out/www/**/*
-          exclude: src/**, content/**
+          
+          
