@@ -30,7 +30,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "vietnguyen-williamnguy-76"
-          entrypoint: "out/www/index.html"
+          entrypoint: "server.js"
           root: ""
           
           
