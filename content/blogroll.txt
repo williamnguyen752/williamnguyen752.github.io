@@ -1,5 +1,7 @@
-https://graydon2.dreamwidth.org/data/atom
-https://neugierig.org/software/blog/atom.xml
-https://without.boats/index.xml
-https://jonathan-frere.com/index.xml
-https://smallcultfollowing.com/babysteps/atom.xml
+http://googleonlinesecurity.blogspot.com/atom.xml
+https://seclists.org/rss/bugtraq.rss
+https://seclists.org/rss/pen-test.rss
+https://seclists.org/rss/webappsec.rss
+https://seclists.org/rss/honeypots.rss
+https://seclists.org/rss/securecoding.rss
+https://seclists.org/rss/basics.rss
