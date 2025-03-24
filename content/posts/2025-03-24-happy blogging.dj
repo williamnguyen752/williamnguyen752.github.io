@@ -18,15 +18,6 @@ Djot ticks all these boxes!
 
 Let's explore the features available in our Djot-based blog setup.
 
-### Basic Text Formatting
-
-Djot supports all the standard text formatting options:
-
-- *italic text* is written as `*italic text*`
-- **bold text** is written as `**bold text**`
-- ~~strikethrough~~ is written as `~~strikethrough~~`
-- `inline code` is written as `` `inline code` ``
-
 ### Headings
 
 Headings are created using hash marks, similar to Markdown:
@@ -91,7 +82,7 @@ You can also add line highlighting:
 
 ```
 fn main() {
-    println!("Hello, Djot!");
+    println!("Hello, 0x789789 with highlightjs-zig!");
 }
 ```
 
@@ -115,10 +106,6 @@ Our blog supports various special blocks:
 
 ::: note
 This is a note block with additional information.
-:::
-
-::: warn
-This is a warning block highlighting important concerns.
 :::
 
 ::: block
