@@ -24,7 +24,7 @@ jobs:
           deno-version: v1.x
 
       - name: Build step
-        run: "task build --blogroll"
+        run: "task build \"--blogroll\""
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
