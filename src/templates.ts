@@ -2,7 +2,7 @@
 import { Post } from "./main.ts";
 import * as blogroll from "./blogroll.ts";
 
-const site_url = "https://matklad.github.io";
+const site_url = "https://vietnguyen.deno.dev/";
 
 export const base = (
   { content, src, title, path, description, extra_css }: {

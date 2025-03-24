@@ -7,6 +7,7 @@
     "build": "                deno run --lock --allow-write=./out --allow-read=./out,./content --allow-net --allow-import         ./src/main.ts build --profile",
     "watch": "rm -rf ./out && deno run --lock --allow-write=./out --allow-read=./out,./content --allow-net --allow-import --watch ./src/main.ts watch",
     "serve": "deno task watch & live-server --host 127.0.0.1 --port 8080 ./out/www",
+    "serve-local": "deno task build && deno run --allow-net --allow-read=./out/www https://deno.land/std/http/file_server.ts ./out/www --port 8080",
     "touch": "deno run --allow-write=./content/posts ./src/main.ts touch"
   },
   "imports": {
