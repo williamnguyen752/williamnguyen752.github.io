@@ -1,9 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: master
-  pull_request:
-    branches: master
+    branches: [master]
 
 jobs:
   deploy:
@@ -15,21 +13,14 @@ jobs:
       contents: read # Needed to clone the repository
 
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    - uses: denoland/setup-deno@v2
+      with:
+        deno-version: v2.x
 
-      - name: Install Deno
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
+    - run: deno task build --blogroll
 
-      - name: Build step
-        run: "deno task build --blogroll"
-
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: "vietnguyen"
-          entrypoint: "server.js"
-          root: "."
-          path: ./out/www
+    - uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./out/www
+    - uses: actions/deploy-pages@v4
