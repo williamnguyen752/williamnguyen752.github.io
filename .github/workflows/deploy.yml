@@ -24,7 +24,5 @@ jobs:
     - uses: actions/upload-pages-artifact@v3
       with:
         path: ./out/www
-        root: "."
-        entrypoint: "server.js"
         
     - uses: actions/deploy-pages@v4
