@@ -85,7 +85,7 @@ export const base = (
 <body>
   <header>
     <nav>
-      <a class="title" href="/">matklad</a>
+      <a class="title" href="/">will/viet</a>
       <a href="/about.html">About</a>
       <a href="/links.html">Links</a>
       <a href="/blogroll.html">Blogroll</a>
