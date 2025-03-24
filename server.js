@@ -25,11 +25,9 @@ serve(async (req) => {
   if (path === "/") path = "/index.html";
   
   try {
-    // The path where your built files are located
     const filePath = `./out/www${path}`;
     const file = await Deno.readFile(filePath);
     
-    // Set appropriate content type based on file extension
     const headers = new Headers();
     const extension = path.substring(path.lastIndexOf("."));
     const contentType = MIME_TYPES[extension] || "application/octet-stream";
