@@ -33,9 +33,12 @@ jobs:
       - name: Build site
         run: deno task build
 
+      - name: Copy server.js to output directory
+        run: cp server.js ./out/www/
+
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "vietnguyen"
-          entrypoint: "./server.js"
+          entrypoint: "server.js"
           root: "./out/www"
