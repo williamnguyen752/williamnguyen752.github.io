@@ -3,70 +3,23 @@
 Welcome to my resume!
 It consists of two parts.
 The first part is the free-form narrative of what I do work-wise.
-This is something _I_ would be excited to read from a person I am going to work with.
-The second part is a more traditional bullet-list of companies, positions, and projects.
+The second part is a more traditional list of companies, positions, and projects.
 The resume is available as [.html][resume.html] and [.pdf][resume.pdf].
 
 {.page-break}
 ## Narrative
 
-I used to do math.
-Although I no longer do mathematics daily, it is the basis I use to think about programming.
-I enjoy solving an occasional puzzle.
-See ["Generate All the Things"][] and ["Notes on Paxos"][] articles as examples of math I like.
+I am a software systems engineer with a strong foundation in building resilient, scalable applications. I'm passionate about clean, maintainable code and designing systems that solve real-world problems. My experience spans from serverless AWS architectures to cross-platform mobile development, always with a focus on engineering excellence.
 
-I am a programmer.
-I like writing code just for the sake of it.
-I like deleting code even more.
-I like short, simple, robust and beautiful code, which not only gets the job done, but does it in an obviously correct way.
-See, eg, [`ungrammar`][] for an example of relatively short and self-contained piece of programming.
+I enjoy the challenge of working in multidisciplinary teams, collaborating with experts across different domains to create cohesive solutions. At Convergence Medical, I've had the opportunity to work with medical, mechanical, and electrical engineers to build healthcare platforms that meet high engineering standards while maintaining usability for clinical staff.
 
-I am a pragmatist.
-The above two points sound outright scary, but don't worry :)
-While I do enjoy encoding lambda calculus in types, that's not what I spend most of my time on.
-I see most code as something to be replaced and re-written later, and optimise for making changes over time, not for perfection right now.
-[This section][scale] from rust-analyzer style guide is a good example of this.
+I'm particularly interested in systems that can handle real-world constraints gracefully. My work on offline-first capabilities with conflict resolution for clinical environments has taught me the importance of designing for reliability in less-than-ideal conditions. When connectivity is lost in an operating theater, the system needs to continue functioning flawlessly.
 
-I loathe accidental complexity.
-I think I spend most of my time trying to make things simpler, trying to remove parts, trying to make foundational APIs more crisp.
-I have a visceral reaction to the gaps between how the thing _should_ be, and how they are.
-[`cargo xtask`][] pattern shows to what lengths I am willing to go just to get rid of the mess the unix shell is.
+Security and compliance are foundational to my approach, especially when working with sensitive healthcare data. I've implemented HIPAA-compliant authentication systems and integrated healthcare standards like FHIR/HL7 to ensure interoperability with existing hospital systems.
 
-I build systems.
-Software engineering is programming integrated over time, and it's that time dimension that really matters.
-The shape of the software today is determined by accidental, runaway, viral successes of yesterday.
-There's a reason why VT100 interface is still programmed against today, and it is not its technical adequacy.
-[This is not my article][abstraction], but I like it so much that I'll advertise it even in my resume.
-System's thinking is why I am fascinated with Rust and not, eg, with Kotlin.
-Since Java with its reasonably fast managed runtime, Rust is the first PL revolution which meaningfully changes how we write software, and not just repacks known-good idioms with a better syntax (which is also important!, just not as exciting!).
+Throughout my career, I've maintained a commitment to quality through comprehensive testing strategies. I believe that reliable systems are built on a foundation of thorough unit, integration, and load tests that prevent regressions and ensure performance under stress.
 
-I build open source communities.
-My biggest successes so far I think are [`IntelliJ Rust`][] and [`rust-analyzer`][].
-I didn't write the hardest, smartest bits of those.
-But I tried very hard to make sure that others can do that, by removing accidental complexity, by making contribution enjoyable, by trying to program the architecture which would be robust to time and systems effects.
-
-More generally, I help build moderately large projects, which are combinations of all of the above: people, systematic forces, beautiful mathematical abstractions at the core, and hundreds of thousands of lines of code as a physical manifestation.
-See ["One Hundred Thousand Lines of Rust"][] series for a bunch of concrete, pragmatic lessons I've learned so far.
-
-I love teaching!
-See, for example, my Russian Rust Course ([YouTube][rust-yt]), a series of videos about rust-analyzer ([YouTube][ra-yt]), or [the article about Pratt parsers][pratt].
-
-Oh, and I love writing :-)
-
-[resume.html]: https://matklad.github.io/resume.html
-[resume.pdf]: https://matklad.github.io/resume.pdf
-[Generate All the Things]: https://matklad.github.io/2021/11/07/generate-all-the-things.html
-[Notes on Paxos]: https://matklad.github.io/2020/11/01/notes-on-paxos.html
-[ungrammar]: https://github.com/rust-analyzer/ungrammar/tree/42810d770e4cddec2a5fff658489fa72f3b28a7c
-[scale]: https://github.com/rust-analyzer/rust-analyzer/blob/d9b2291f546abc77d24499339a72a89127464b95/docs/dev/style.md#scale-of-changes
-[cargo xtask]: https://github.com/matklad/cargo-xtask/tree/a49054989203a877f899d1285b5f3d642cf36d11
-[abstraction]: https://www.tedinski.com/2018/01/30/the-one-ring-problem-abstraction-and-power.html
-[IntelliJ Rust]: https://github.com/intellij-rust/intellij-rust
-[rust-analyzer]: https://github.com/rust-analyzer/rust-analyzer
-[One Hundred Thousand Lines of Rust]: https://matklad.github.io/2021/09/05/Rust100k.html
-[rust-yt]: https://www.youtube.com/watch?v=Oy_VYovfWyo&list=PLlb7e2G7aSpTfhiECYNI2EZ1uAluUqE_e
-[ra-yt]: https://www.youtube.com/watch?v=I3RXottNwk0&list=PLhb66M_x9UmrqXhQuIpWC5VgTdrGxMx3y
-[pratt]: https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html
+I continue to learn and grow with each project, and I'm excited about the possibilities that lie at the intersection of technology and healthcare.
 
 {.page-break}
 ----
@@ -75,121 +28,89 @@ Oh, and I love writing :-)
 
 : Name
 
-  Alex Kladov
+  William Nguyen (Nguyen Hoang Viet)
 
 : GitHub
 
-  <https://github.com/matklad>
+  <https://github.com/williamnguyen752>
 
 : Email
 
-  <aleksey.kladov@gmail.com>
+  <williamnguyen752@gmail.com>
 
 ## Core Competencies
 
-- Building complex systems software from nothing
-- Growing open source communities
-- Implementing compilers, IDEs, build tools, databases
-- Rust mastery, Zig proficiency
+- Serverless Architecture (AWS Lambda, API Gateway, AppSync, DynamoDB)
+- Cross-Platform Development (React Native, React.js, Next.js)
+- Healthcare Technology Integration (FHIR/HL7)
+- Software Development Fundamentals
+- Security Implementation and Compliance (HIPAA)
 
 ## Education
 
-* 2014-2016, Masters of Software Engineering (unfinished) \
-  *St. Petersburg State University of RAS*, Russia
-
-* 2009-2014, Specialist of Software Engineering \
-  *St. Petersburg State University*, Russia
+* 2022-2024, Bachelor of Engineering(Hons) - Major: Software Engineering \
+  *University of Queensland*, Queensland, Australia
 
 ## Professional Experience
 
-### TigerBeetle
+### Convergence Medical
 
-`From Dec 2022`\
-<https://tigerbeetle.com>\
-<https://github.com/tigerbeetle/tigerbeetle>
+`Nov 2024 to Apr 2025`\
+Brisbane, Australia
 
-At TigerBeetle I help to build correct and fast distributed database for accounting in Zig. I work
-throughout the stack, but my primary focus areas are consensus, testing, overall
-build&development process, and knowledge sharing.
+**Software Systems Engineer**
 
-### Rust Programming Language
+Lead design and implementation of an enterprise healthcare platform enabling secure communications between V01 surgical arthroscopic robots and clinical staff across multiple devices.
 
-`Sep 2015 to Dec 2022`\
-<https://www.rust-lang.org/governance/teams/dev-tools>
+- Architected multi-layered system with discrete components including client layer, API/authentication layer, clinical services, and security/compliance layers, creating a highly scalable and maintainable codebase.
+- Engineered secure authentication system with enterprise-managed registration using AWS Cognito and custom IAM roles, enhancing HIPAA compliance and reducing security vulnerabilities.
+- Developed offline-first capabilities with conflict resolution for clinical environments, ensuring consistent application availability even with intermittent connectivity issues in operating theater.
+- Implemented FHIR/HL7 healthcare standards integration using AWS HealthLake, enabling data exchange with existing hospital systems.
+- Built React Native/Expo cross-platform application with secure Peer-to-Peer(P2P) communication between surgical devices and clinician interfaces, substantially reducing surgical procedure setup time.
+- Designed and deployed comprehensive serverless backend with Lambda functions, DynamoDB, and AppSync GraphQL, optimizing infrastructure costs compared to monolithic architecture.
+- Collaborated closely with mechanical, medical, electrical engineers and product team to create accessible features that aligned with high engineering standards and best practices.
+- Implemented and maintained unit, integration, and load tests to ensure reliability and performance of Convergence Medical platform, achieving highest coverage and preventing regressions across multiple feature releases.
 
-I was a member of the dev-tools team of the Rust programming language. I am the
-original author of both [IntelliJ
-Rust](https://github.com/intellij-rust/intellij-rust) and [rust-analyzer](https://github.com/rust-lang/rust-analyzer) --- the two
-tools which today power IDE support for Rust in virtually every editor. My work
-included both the technical task of writing an advanced, incremental, resilient
-compilers _and_ organizing a vibrant community of contributors and maintainers
-to ensure that my direct involvement is not a requirement.
+### UQ Cyber
 
-I made many smaller contributions across the Rust ecosystem. I was a
-co-maintainer of [Cargo](https://github.com/rust-lang/cargo) in 2016-2018,
-maintain [prominent libraries](https://github.com/matklad/once_cell/), and
-document [emerging ecosystem patterns](https://github.com/matklad/cargo-xtask).
+`Aug 2023 to Jun 2024`\
+Brisbane, Australia
 
-### NEAR
+**Undergraduate Research Assistant**
 
-`Feb 2021 to Dec 2022`\
-<https://near.org>
+Developed autonomous system security frameworks for multi-robot environments, focusing on attack detection and mitigation strategies.
 
-At NEAR, I was a TLM/TL for the contract runtime team which is responsible for
-secure, reliable, and fast execution of WebAssembly smart contracts.
+- Designed and implemented DOS attack modeling system for multi-robot testbeds using Python and Kalman filter algorithms.
+- Enhanced attack detection threshold through optimized estimation algorithms validated on Robotarium testing platform.
+- Conducted thesis research on cyber threat modeling techniques for multi-robot teams with focus on physical layer security.
 
-### Ferrous Systems
+### IO Stream
 
-`Sep 2018 to Feb 2021`\
-<https://ferrous-systems.com>
+`Jun 2022 to Dec 2022`\
+HCM City, Vietnam
 
-With Ferrous Systems, we brought rust-analyzer project from an MVP to a de-facto
-standard for the ecosystem. I also helped with teaching people to use Rust
-efficiently.
+**Developer Intern**
 
-### Computer Science Center
+- Developed C++ 11 library for image processing with the deep understanding of generics type implementation.
+- Maintained RESTful APIs using Node.js and TypeScript for company web application.
 
-`Sep 2014 to Sep 2019`\
-<https://compscicenter.ru/teachers/934/>
+## Projects
 
-At CSC I taught two major courses:
+### SpamOverflow
 
-: Programming In Rust, `Winter-Spring 2019`, [video](https://www.youtube.com/watch?v=Oy_VYovfWyo)
+`2024`\
+University of Queensland
 
-  A semester long introduction course, focused on contrasting unique Rust
-  features with more mainstream languages like C++ or Java.
+Developed a scalable email filtering service using a microservices architecture on AWS, capable of processing up to 10,000 emails per minute. Implemented infrastructure as code using Terraform, enabling consistent and repeatable deployments.
 
-: Programming In Python, `Autumn-Winter 2018`, [video](https://www.youtube.com/watch?v=-py9GXvJk6A)
+- Implemented MySQL database normalization techniques and optimized SQL queries to handle high-volume email metadata storage and retrieval.
+- Leveraged AWS Lambda for serverless email processing, reducing operational costs compared to traditional EC2 instances.
+- Integrated AWS SQS for asynchronous processing, ensuring zero message loss during traffic spikes of up to 20,000 requests per minute.
+- Utilized AWS ECS with Docker for containerized microservices, improving scalability and reducing deployment time from hours to minutes.
 
-  A semester long advanced course focusing on the language inner workings and
-  programming idioms.
+## Certifications
 
-I have also worked as a teaching assistant for "Algorithms and Data structures"
-and "Python" courses.
+- AWS Certified Developer – Associate ([Link](#))
 
-### JetBrains
-
-`Sep 2015 to Jan 2018`\
-<https://intellij-rust.github.io>
-
-At JetBrains, I have led the development of
-[IntelljJ-Rust](http://github.com/intellij-rust/intellij-rust) plugin for the Rust
-programming language. The plugin is a Rust "compiler" written in Kotlin, with
-full-blown parser, name resolution and type inference algorithms, and
-integrations with build tools and debuggers. Besides solving the technical
-problems, I've created an open source community around the plugin by mentoring
-issues, writing developer documentation and supporting contributors.
-
-The plugin later became the basis for the stand-alone [Rust Rover](https://www.jetbrains.com/rust/)
-IDE.
-
-### Stepik.org
-
-`2012 to 2014`\
-<http://stepik.org/>
-
-Stepik is a e-learning platform, written in Python, focused on rich variety of
-practical exercises and ease of creating content. I was on the backend team of
-three from the start of the project. Among other things, I've worked on
-exercises subsystem and student's code sandboxing, progress tracking and
-designed and implemented JSON API interface for the single-page frontend.
+[resume.html]: https://williamnguyen752.github.io/resume.html
+[resume.pdf]: https://williamnguyen752.github.io/resume.pdf
