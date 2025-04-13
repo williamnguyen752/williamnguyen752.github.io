@@ -165,7 +165,12 @@ export function post(post: Post, spellcheck: boolean): HtmlString {
 
 export const blogroll_list = (posts: blogroll.FeedEntry[]): HtmlString => {
   function domain(url: string): string {
-    return new URL(url).host;
+    try {
+      return new URL(url).host;
+    } catch (e) {
+      console.error(`Invalid URL: ${url}`, e);
+      return "unknown source";
+    }
   }
 
   const list_items = posts.map((post) =>
@@ -173,17 +178,18 @@ export const blogroll_list = (posts: blogroll.FeedEntry[]): HtmlString => {
 <li>
   <h2>
   <span class="meta">${time(post.date)}, ${domain(post.url)}</span>
-    <a href="${post.url}">${post.title}</a>
+    <a href="${post.url}" target="_blank" rel="noopener noreferrer">${post.title}</a>
   </h2>
 </li>`
   );
 
   return base({
-    path: "",
-    title: "williamnguyen752",
+    path: "/blogroll.html",
+    title: "williamnguyen752 - Blogroll",
     description: blurb,
     src: "/src/templates.ts",
-    content: html`<ul class="post-list">${list_items}</ul>`,
+    content: html`<h1>Blogroll</h1>
+    <ul class="post-list">${list_items}</ul>`,
   });
 };
 

@@ -1,7 +1,6 @@
 http://googleonlinesecurity.blogspot.com/atom.xml
-https://seclists.org/rss/bugtraq.rss
-https://seclists.org/rss/pen-test.rss
-https://seclists.org/rss/webappsec.rss
-https://seclists.org/rss/honeypots.rss
-https://seclists.org/rss/securecoding.rss
-https://seclists.org/rss/basics.rss
+https://www.darkreading.com/rss.xml
+https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.xml
+https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml
+https://seclists.org/rss/fulldisclosure.rss
+https://packetstormsecurity.com/file-formats/rss/

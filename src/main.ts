@@ -140,11 +140,20 @@ async function build(params: {
     );
   }
 
-  if (params.blogroll) {
+  console.log("Generating blogroll...");
+  try {
     const blogroll_posts = await blogroll.blogroll();
+    console.log(`Generated blogroll with ${blogroll_posts.length} entries`);
     await update_file(
       "out/www/blogroll.html",
       templates.blogroll_list(blogroll_posts).value,
+    );
+  } catch (error) {
+    console.error("Error generating blogroll:", error);
+    // Still create a basic blogroll page even if feeds fail
+    await update_file(
+      "out/www/blogroll.html",
+      templates.blogroll_list([]).value,
     );
   }
 
@@ -286,3 +295,4 @@ async function* walk(root: string): AsyncIterableIterator<string> {
 }
 
 if (import.meta.main) await main();
+
