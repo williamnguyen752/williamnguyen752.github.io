@@ -1,4 +1,3 @@
 http://googleonlinesecurity.blogspot.com/atom.xml
-https://www.darkreading.com/rss.xml
 https://seclists.org/rss/fulldisclosure.rss
 https://blog.codinghorror.com/rss/
