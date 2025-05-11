@@ -1,3 +1,4 @@
 http://googleonlinesecurity.blogspot.com/atom.xml
 https://seclists.org/rss/fulldisclosure.rss
 https://blog.codinghorror.com/rss/
+https://insights.sei.cmu.edu/blog/feeds/latest/rss/
