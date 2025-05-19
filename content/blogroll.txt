@@ -1,4 +1,5 @@
 http://googleonlinesecurity.blogspot.com/atom.xml
 https://seclists.org/rss/fulldisclosure.rss
+https://seclists.org/rss/nmap-dev.rss
 https://blog.codinghorror.com/rss/
 https://insights.sei.cmu.edu/blog/feeds/latest/rss/
