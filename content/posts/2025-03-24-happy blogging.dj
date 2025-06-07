@@ -1,4 +1,4 @@
-# Blogging with Djot and Deploying to Deno Deploy
+# Blogging with Djot
 
 This post explores how to use [Djot](https://djot.net) as your blogging markup language and how to set up automatic deployments to Deno Deploy using GitHub Actions. Djot combines the simplicity of Markdown with the extensibility of HTML, making it an excellent choice for technical blogs.
 
@@ -6,7 +6,7 @@ This post explores how to use [Djot](https://djot.net) as your blogging markup l
 
 Djot is a light markup language created by John MacFarlane (the creator of Pandoc). It's designed to be simple, unambiguous, and extensible. Unlike Markdown, which has many flavors and extensions, Djot aims to have a single standard with a clean document model.
 
-As I mentioned in my [Elements of a Great Markup Language](https://matklad.github.io/2022/10/28/elements-of-a-great-markup-language.html) post, a great markup language should:
+As Alex(@matklad) mentioned in his [Elements of a Great Markup Language](https://matklad.github.io/2022/10/28/elements-of-a-great-markup-language.html) post, a great markup language should:
 
 1. Have a clean abstract document model
 2. Feature tasteful syntax for common patterns
@@ -14,33 +14,7 @@ As I mentioned in my [Elements of a Great Markup Language](https://matklad.githu
 
 Djot ticks all these boxes!
 
-## Djot Features and Syntax
-
-Let's explore the features available in our Djot-based blog setup.
-
-### Headings
-
-Headings are created using hash marks, similar to Markdown:
-
-```
-# Level 1 Heading
-## Level 2 Heading
-### Level 3 Heading
-```
-
-### Lists
-
-Unordered lists use the `-` prefix:
-
-- Item 1
-- Item 2
-- Item 3
-
-Ordered lists use numbers followed by periods:
-
-1. First item
-2. Second item
-3. Third item
+## Djot Features that I likes
 
 ### Links
 
@@ -137,109 +111,8 @@ For side-by-side comparisons, use the `.two-col` class:
 - Item 3
 :::
 
-## Setting Up GitHub Actions for Deno Deploy
 
-Now, let's set up GitHub Actions to automatically deploy our Djot blog to Deno Deploy whenever we push changes to our repository.
-
-### Create a GitHub Actions Workflow
-
-Create a file named `.github/workflows/deploy.yml` with the following content:
-
-```yaml
-name: Deploy
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v3
-
-      - name: Install Deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
-
-      - name: Build site
-        run: deno task build
-
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: your-project-name # Replace with your Deno Deploy project name
-          entrypoint: server.js
-          root: ./out/www
-```
-
-### Set Up Deno Deploy
-
-1. Sign up for [Deno Deploy](https://deno.com/deploy) using your GitHub account
-2. Create a new project and connect it to your GitHub repository
-3. Configure the project to use the `server.js` file as the entrypoint
-4. Set the working directory to `./out/www`
-
-### The Server File
-
-Our `server.js` file (which we already have) handles serving the static files:
-
-```javascript
-// server.js
-import { serve } from "https://deno.land/std@0.170.0/http/server.ts";
-
-// MIME types for common file extensions
-const MIME_TYPES = {
-  ".html": "text/html",
-  ".css": "text/css",
-  ".js": "text/javascript",
-  // Other MIME types...
-};
-
-serve(async (req) => {
-  const url = new URL(req.url);
-  let path = url.pathname;
-  
-  // Handle root path
-  if (path === "/") path = "/index.html";
-  
-  try {
-    // The path where your built files are located
-    const filePath = `./out/www${path}`;
-    const file = await Deno.readFile(filePath);
-    
-    // Set appropriate content type based on file extension
-    const headers = new Headers();
-    const extension = path.substring(path.lastIndexOf("."));
-    const contentType = MIME_TYPES[extension] || "application/octet-stream";
-    headers.set("content-type", contentType);
-    
-    return new Response(file, { headers });
-  } catch (e) {
-    console.error(`Error serving ${path}: ${e.message}`);
-    return new Response("Not Found", { status: 404 });
-  }
-});
-```
-
-## Workflow
-
-Here's the typical workflow for publishing content:
-
-1. Write your blog post in Djot format in the `content/posts/` directory
-2. Use `deno task serve` to preview your content locally
-3. Commit and push your changes to GitHub
-4. GitHub Actions will automatically build and deploy your site to Deno Deploy
-
-## Conclusion
+## Final notes
 
 Djot provides a clean, intuitive syntax for writing blog posts with rich formatting, while Deno Deploy offers an easy way to host your static site. Combined with GitHub Actions for automated deployments, you have a powerful, modern blogging platform that's both flexible and easy to maintain.
 
