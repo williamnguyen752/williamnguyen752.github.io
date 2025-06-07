@@ -2,7 +2,7 @@
 import { Post } from "./main.ts";
 import * as blogroll from "./blogroll.ts";
 
-const site_url = "https://williamnguyen752.github.io/";
+const site_url = "https://zi3t.github.io/";
 
 export const base = (
   { content, src, title, path, description, extra_css }: {
@@ -25,7 +25,7 @@ export const base = (
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="${site_url}${path}">
-  <link rel="alternate" type="application/rss+xml" title="williamnguyen752" href="${site_url}/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="zi3t" href="${site_url}/feed.xml">
   <style>
   @font-face {
     font-family: 'Open Sans'; src: url('/css/OpenSans-300-Normal.woff2') format('woff2');
@@ -98,7 +98,7 @@ export const base = (
 
   <footer>
     <p>
-      <a href="https://github.com/williamnguyen752/blog/edit/master${src}">
+      <a href="https://github.com/zi3t/blog/edit/master${src}">
         <svg class="icon"><use href="/assets/icons.svg#edit"/></svg>
         Fix typo
       </a>
@@ -110,9 +110,9 @@ export const base = (
         <svg class="icon"><use href="/assets/icons.svg#email"/></svg>
         Get in touch
       </a>
-      <a href="https://github.com/williamnguyen752">
+      <a href="https://github.com/zi3t">
         <svg class="icon"><use href="/assets/icons.svg#github"/></svg>
-        williamnguyen752
+        zi3t
       </a>
     </p>
   </footer>
@@ -126,7 +126,7 @@ const blurb = "Yet another programming blog by Viet Nguyen.";
 export function page(name: string, content: HtmlString) {
   return base({
     path: `/${name}`,
-    title: "williamnguyen752",
+    title: "zi3t - " + name,
     description: blurb,
     src: `/content/${name}.dj`,
     extra_css: name === "resume" ? "resume.css" : undefined,
@@ -144,7 +144,7 @@ export const post_list = (posts: Post[]): HtmlString => {
 
   return base({
     path: "",
-    title: "williamnguyen752",
+    title: "zi3t - Blog",
     description: blurb,
     src: "/src/templates.ts",
     content: html`<ul class="post-list">${list_items}</ul>`,
@@ -185,7 +185,7 @@ export const blogroll_list = (posts: blogroll.FeedEntry[]): HtmlString => {
 
   return base({
     path: "/blogroll.html",
-    title: "williamnguyen752 - Blogroll",
+    title: "zi3t - Blogroll",
     description: blurb,
     src: "/src/templates.ts",
     content: html`<h1>Blogroll</h1>
@@ -233,9 +233,9 @@ export const feed = (posts: Post[]): HtmlString => {
 <link href="${site_url}" rel="alternate" type="text/html"/>
 <updated>${new Date().toISOString()}</updated>
 <id>${site_url}/feed.xml</id>
-<title type="html">williamnguyen752</title>
-<subtitle>Yet another programming blog by Alex Kladov aka williamnguyen752.</subtitle>
-<author><name>Alex Kladov</name></author>
+<title type="html">zi3t</title>
+<subtitle>Programming blog by Viet Nguyen aka zi3t.</subtitle>
+<author><name>Viet Nguyen</name></author>
 ${entries}
 </feed>
 `;
@@ -249,7 +249,7 @@ export const feed_entry = (post: Post): HtmlString => {
 <published>${yyyy_mm_dd(post.date)}T00:00:00+00:00</published>
 <updated>${yyyy_mm_dd(post.date)}T00:00:00+00:00</updated>
 <id>${site_url}${post.path.replace(".html", "")}</id>
-<author><name>Alex Kladov</name></author>
+<author><name>Viet Nguyen</name></author>
 <summary type="html"><![CDATA[${post.summary}]]></summary>
 <content type="html" xml:base="${site_url}${post.path}"><![CDATA[${post.content}]]></content>
 </entry>
