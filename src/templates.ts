@@ -98,7 +98,7 @@ export const base = (
 
   <footer>
     <p>
-      <a href="https://github.com/zi3t/zi3t.github.io/blog/edit/master${src}">
+      <a href="https://github.com/zi3t/zi3t.github.io/edit/master${src}">
         <svg class="icon"><use href="/assets/icons.svg#edit"/></svg>
         Fix typo
       </a>
@@ -144,7 +144,7 @@ export const post_list = (posts: Post[]): HtmlString => {
 
   return base({
     path: "",
-    title: "zi3t - Blog",
+    title: "zi3t",
     description: blurb,
     src: "/src/templates.ts",
     content: html`<ul class="post-list">${list_items}</ul>`,
