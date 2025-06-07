@@ -98,7 +98,7 @@ export const base = (
 
   <footer>
     <p>
-      <a href="https://github.com/zi3t/blog/edit/master${src}">
+      <a href="https://github.com/zi3t/zi3t.github.io/blog/edit/master${src}">
         <svg class="icon"><use href="/assets/icons.svg#edit"/></svg>
         Fix typo
       </a>
